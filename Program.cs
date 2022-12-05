@@ -8,7 +8,63 @@
 // 9 5 3 2
 // 8 4 4 2
 
+/* 
+int [,] Create2dArray () // создание 2х мерного массива
+{
+    Console.Write ("Input number of rows: ");
+    int rows = Convert.ToInt32 (Console.ReadLine());
+    Console.Write ("Input number of column: ");
+    int columns = Convert.ToInt32 (Console.ReadLine());
+    Console.Write ("Input min possible value: ");
+    int minValue = Convert.ToInt32 (Console.ReadLine());
+    Console.Write ("Input max possible value: ");
+    int maxValue = Convert.ToInt32 (Console.ReadLine());
 
+    int [,] createdArray = new int [rows, columns];
+
+    for (int i = 0; i < rows; i++)
+        for ( int j = 0; j < columns; j++)
+            createdArray [i,j] = new Random().Next(minValue, maxValue + 1);
+
+    return createdArray;
+}
+
+void Show2dArray (int [,] array) // вывод 2х мерного массива
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for ( int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write (array[i,j] + " ");
+        }
+        Console.WriteLine ();
+    }
+    Console.WriteLine ();
+}
+
+int [,] MinChangeRow (int [,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+        for (int j = 0; j < array.GetLength(1)-1; j++)
+        {
+            for (int k = j+1; k < array.GetLength(1); k++)
+            {
+                if (array[i, j] < array[i, k])
+            {
+                int temp = array[i, j];
+                array[i, j] = array[i, k];
+                array[i, k] = temp;
+            }
+            } 
+        }
+return array;
+}
+
+int [,] myArray = Create2dArray();
+Show2dArray(myArray);
+MinChangeRow (myArray);
+Show2dArray(myArray);
+ */
 
 // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 // Например, задан массив:
