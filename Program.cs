@@ -74,7 +74,92 @@ Show2dArray(myArray);
 // 5 2 6 7
 // Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
 
+/* 
+int [,] Create2dArray () // создание 2х мерного массива
+{
+    Console.Write ("Input number of rows: ");
+    int rows = Convert.ToInt32 (Console.ReadLine());
+    Console.Write ("Input number of column: ");
+    int columns = Convert.ToInt32 (Console.ReadLine());
+    Console.Write ("Input min possible value: ");
+    int minValue = Convert.ToInt32 (Console.ReadLine());
+    Console.Write ("Input max possible value: ");
+    int maxValue = Convert.ToInt32 (Console.ReadLine());
 
+    int [,] createdArray = new int [rows, columns];
+
+    for (int i = 0; i < rows; i++)
+        for ( int j = 0; j < columns; j++)
+            createdArray [i,j] = new Random().Next(minValue, maxValue + 1);
+
+    return createdArray;
+}
+
+void Show2dArray (int [,] array) // вывод 2х мерного массива
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for ( int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write (array[i,j] + " ");
+        }
+        Console.WriteLine ();
+    }
+    Console.WriteLine ();
+}
+
+void ShowArray (int [] array)
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write ($"{array[i]}, ");
+    }
+    Console.WriteLine("\b\b].");
+}
+
+int [] MinSumRow (int [,] array)
+{
+    int sum = 0;
+    int [] arraySum = new int [array.GetLength(0)];
+    
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+                sum += array[i, j];
+            }
+            for (int k = i; k < array.GetLength(0); k++)
+                {
+                    arraySum [k] = sum;
+                }
+            sum = 0;
+        }
+return arraySum;
+}
+
+int minIndex (int [] array)
+{
+    int min = 0;
+    for (int i = 1; i < array.Length; i++)
+    {
+        if (array[i] < array[min])
+            {
+                min = i;
+            }
+    }
+    return min;
+}
+
+int [,] myArray = Create2dArray();
+Show2dArray(myArray);
+int [] mySumArray = MinSumRow(myArray);
+Console.Write("An array with the sums of the elements in each row of a two-dimensional array: ");
+ShowArray(mySumArray);
+Console.WriteLine();
+int minIndexRow = minIndex (mySumArray);
+Console.WriteLine($"The row with the smallest sum of elements is {minIndexRow+1}. The smallest sum of elements is {mySumArray[minIndexRow]}.");
+ */
 
 // Задача 58:(дополнительно) Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 // Например, даны 2 матрицы:
