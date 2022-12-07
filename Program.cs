@@ -169,7 +169,73 @@ Console.WriteLine($"The row with the smallest sum of elements is {minIndexRow+1}
 // 18 20
 // 15 18
 
+/* 
+int [,] Create2dArray () // создание 2х мерного массива
+{
+    Console.Write ("Input number of rows: ");
+    int rows = Convert.ToInt32 (Console.ReadLine());
+    Console.Write ("Input number of column: ");
+    int columns = Convert.ToInt32 (Console.ReadLine());
+    Console.Write ("Input min possible value: ");
+    int minValue = Convert.ToInt32 (Console.ReadLine());
+    Console.Write ("Input max possible value: ");
+    int maxValue = Convert.ToInt32 (Console.ReadLine());
 
+    int [,] createdArray = new int [rows, columns];
+
+    for (int i = 0; i < rows; i++)
+        for ( int j = 0; j < columns; j++)
+            createdArray [i,j] = new Random().Next(minValue, maxValue + 1);
+
+    return createdArray;
+}
+
+void Show2dArray (int [,] array) // вывод 2х мерного массива
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for ( int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write (array[i,j] + " ");
+        }
+        Console.WriteLine ();
+    }
+    Console.WriteLine ();
+}
+
+int [,] MatrixMultiplication (int [,] arrayA, int [,] arrayB)
+{
+    int [,] multiArray = new int [arrayA.GetLength(0), arrayB.GetLength(1)];
+    for (int i = 0; i < arrayA.GetLength(0); i++)
+    {
+        for (int j = 0; j < arrayB.GetLength(1); j++)
+        {
+            for (int r = 0; r < arrayB.GetLength(0); r++)
+            {
+                multiArray [i,j] += arrayA [i,r] * arrayB [r,j];
+            }
+        }
+    }
+return multiArray;
+}
+
+int [,] myArrayA = Create2dArray();
+Console.WriteLine ($"Matrix A:");
+Show2dArray(myArrayA);
+int [,] myArrayB = Create2dArray();
+Console.WriteLine ($"Matrix B:");
+Show2dArray(myArrayB);
+if (myArrayA.GetLength(1)==myArrayB.GetLength(0))
+{
+    Console.WriteLine ($"Matrix multiplication A x B:");
+    int [,] myArrayAB = MatrixMultiplication (myArrayA, myArrayB);
+    Show2dArray(myArrayAB);
+}
+else
+{
+    Console.WriteLine ($"Matrix multiplication is not feasible. The number of columns of matrix A {myArrayA.GetLength(1)} is not equal to the number of rows of matrix B {myArrayB.GetLength(0)}.");
+}
+ */
 
 // Задача 60.(дополнительно) ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 // Массив размером 2 x 2 x 2
