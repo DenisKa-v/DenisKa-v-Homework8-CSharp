@@ -186,3 +186,101 @@ Console.WriteLine($"The row with the smallest sum of elements is {minIndexRow+1}
 // 12 13 14 05
 // 11 16 15 06
 // 10 09 08 07
+
+
+/* int [,] Create2dSpiralArray () // создание 2х мерного массива
+{
+    Console.Write ("Input number of rows: ");
+    int rows = Convert.ToInt32 (Console.ReadLine());
+    Console.Write ("Input number of column: ");
+    int columns = Convert.ToInt32 (Console.ReadLine());
+    Console.WriteLine ();
+    
+    int [,] createdArray = new int [rows, columns];
+    int el = 1;
+
+    for ( int j = 0; j < columns; j++) // заполнение первой строки
+    {
+        createdArray [0,j] = el;
+        el++;
+    }
+    
+    for ( int i = 1; i < rows-1; i++) // заполнение последнего столбца
+    {
+        createdArray [i,columns-1] = el;
+        el++;
+    }
+    
+    for ( int j = columns-1; j > -1; j--) // заполнение последней строки
+    {
+        createdArray [rows-1,j] = el;
+        el++;
+    }
+    
+    for ( int i = rows-2; i > 0; i--) // заполнение первого столбца
+    {
+        createdArray [i,0] = el;
+        el++;
+    }
+
+    // начальные индексы элемента массива внутренней незаполненной области
+    int k = 1;
+    int m = 1;
+
+    while (el < rows*columns)
+    {
+    // Вложенный цикл останавливается, если следующий элемент массива не равен 0. Элемент, на котором остановился цикл, не заполняется.
+    while (createdArray [k,m+1] == 0) // заполнение вправо
+        {
+        createdArray [k,m] = el;
+        el++;
+        m++;
+        }
+    while (createdArray [k+1,m] == 0) // заполнение влево
+        {
+        createdArray [k,m] = el;
+        el++;
+        k++;
+        }
+
+   while (createdArray [k,m-1] == 0) // заполнение вниз
+        {
+        createdArray [k,m] = el;
+        el++;
+        m--;
+        }
+    
+    while (createdArray [k-1,m] == 0) // заполнение вверх
+        {
+        createdArray [k,m] = el;
+        el++;
+        k--;
+        }
+    }
+
+    for (int i = 0; i < rows; i++) // заполнение последнего элемента массива
+        for (int j = 0; j < columns; j++)
+            if (createdArray [i,j] == 0) 
+            {
+                createdArray [i,j] = el;
+            }
+    
+    return createdArray;
+}
+
+void Show2dArray (int [,] array) // вывод 2х мерного массива
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for ( int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write (array[i,j] + " ");
+        }
+        Console.WriteLine ();
+    }
+    Console.WriteLine ();
+}
+
+int [,] myArray = Create2dSpiralArray();
+Show2dArray(myArray);
+ */
