@@ -178,7 +178,47 @@ Console.WriteLine($"The row with the smallest sum of elements is {minIndexRow+1}
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
 
+/* 
+int [,,] Create3dArray () // создание 3х мерного массива
+{
+    Console.Write ("Input number of elements in the dimension x: ");
+    int x = Convert.ToInt32 (Console.ReadLine());
+    Console.Write ("Input number of elements in the dimension y: ");
+    int y = Convert.ToInt32 (Console.ReadLine());
+    Console.Write ("Input number of elements in the dimension z: ");
+    int z = Convert.ToInt32 (Console.ReadLine());
 
+    int [,,] createdArray = new int [x, y, z];
+
+    for (int i = 0; i < x; i++)
+        for ( int j = 0; j < y; j++)
+            for ( int k = 0; k < z; k++)
+            createdArray [i,j,k] = new Random().Next(10, 100);
+
+    return createdArray;
+}
+
+void Show3dArray (int [,,] array) // вывод 3х мерного массива
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for ( int j = 0; j < array.GetLength(1); j++)
+        {
+            for ( int  k= 0; k < array.GetLength(2); k++)
+            {
+            Console.Write ($"{array[i,j,k]} ({i},{j},{k}) ");
+            }
+        }
+        Console.WriteLine ();
+    }
+    Console.WriteLine ();
+}
+
+int [,,] myArray = Create3dArray();
+Console.WriteLine ();
+Console.WriteLine ($"3Darray with the size {myArray.GetLength(0)} x {myArray.GetLength(1)} x {myArray.GetLength(2)}.");
+Show3dArray(myArray);
+ */
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
 // Например, на выходе получается вот такой массив:
